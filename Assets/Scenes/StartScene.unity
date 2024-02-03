@@ -228,20 +228,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456836432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.43124995, y: 0.43124995, z: 0.43124995}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2061986282}
   - {fileID: 909208428}
   - {fileID: 1254346886}
-  m_Father: {fileID: 961335814}
+  m_Father: {fileID: 469405330}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 200}
+  m_AnchoredPosition: {x: 720.18756, y: 319.25}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &456836434
@@ -291,8 +291,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 469405330}
+  - component: {fileID: 469405331}
+  - component: {fileID: 469405332}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ATM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,15 +307,43 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469405329}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960.00006, y: -540.2899, z: 0}
+  m_LocalScale: {x: 2.3188407, y: 2.3188407, z: 2.3188407}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 961335814}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  - {fileID: 456836433}
+  - {fileID: 1606934379}
+  m_Father: {fileID: 961335814}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &469405331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469405329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22a1206d6533f843878d3e53dd11e6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userName: {fileID: 2061986283}
+  currentBalanceTxt: {fileID: 1254346887}
+  currentBalance: 50000
+--- !u!114 &469405332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469405329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9ecbc0dc20739429fe7bc251a96103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +529,7 @@ GameObject:
   - component: {fileID: 711777997}
   - component: {fileID: 711777996}
   m_Layer: 0
-  m_Name: Button (Legacy)
+  m_Name: deposit_Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +599,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 711777997}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 469405332}
+        m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
+        m_MethodName: OnclickDeposit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &711777997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,11 +843,10 @@ RectTransform:
   m_Children:
   - {fileID: 1988969540}
   - {fileID: 1708223644}
-  - {fileID: 1422981338}
-  - {fileID: 456836433}
-  - {fileID: 1606934379}
-  m_Father: {fileID: 469405330}
-  m_RootOrder: -1
+  - {fileID: 469405330}
+  - {fileID: 2101037472}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -946,7 +987,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 50,000
+  m_Text: 0
 --- !u!222 &1254346888
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -980,19 +1021,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422981337}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.43125, y: 0.43125, z: 0.43125}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 191772020}
   - {fileID: 1497719771}
-  m_Father: {fileID: 961335814}
+  m_Father: {fileID: 2101037472}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: 0}
+  m_AnchoredPosition: {x: 172.5, y: 233}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1422981339
@@ -1104,7 +1145,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100,000
+  m_Text: 0
 --- !u!222 &1497719773
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1126,7 +1167,7 @@ GameObject:
   - component: {fileID: 1505334549}
   - component: {fileID: 1505334548}
   m_Layer: 0
-  m_Name: Button (Legacy)
+  m_Name: withdraw_Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1196,7 +1237,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1505334549}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 469405332}
+        m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
+        m_MethodName: ONclickWithdraw
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1505334549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,19 +1313,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606934378}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.43124995, y: 0.43124995, z: 0.43124995}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 711777995}
   - {fileID: 1505334547}
-  m_Father: {fileID: 961335814}
+  m_Father: {fileID: 469405330}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -250, y: 300}
+  m_AnchoredPosition: {x: 720.18756, y: 129.375}
   m_SizeDelta: {x: 500, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606934380
@@ -1656,3 +1709,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061986281}
   m_CullTransparentMesh: 1
+--- !u!1 &2101037471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101037472}
+  - component: {fileID: 2101037473}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101037472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101037471}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960.00006, y: -540.2899, z: 0}
+  m_LocalScale: {x: 2.3188407, y: 2.3188407, z: 2.3188407}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1422981338}
+  m_Father: {fileID: 961335814}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2101037473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101037471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128c9deffe76a764ebd1cf03227e1f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCashValueTxt: {fileID: 1497719772}
+  currentCash: 100000
