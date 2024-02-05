@@ -12,6 +12,7 @@ public class ATM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentBalance = DataManager._atmBalance;
         currentBalanceTxt.text = currentBalance.ToString();
     }
 
