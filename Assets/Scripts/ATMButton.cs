@@ -11,6 +11,7 @@ public class ATMButton : MonoBehaviour
     //private Button _ATMButton;
     private int _buttonValue;
     [SerializeField] private InputField InputField;
+    [SerializeField] private GameObject insufficientPopup;
     //public GameObject ATM;
     // Start is called before the first frame update
     void Start()
@@ -63,20 +64,42 @@ public class ATMButton : MonoBehaviour
         UseInputATM(InputField.text);
     }
 
+    public void OnclickClosePopup()
+    {
+        insufficientPopup.SetActive(false);
+    }
+
     public void Deposit(int _buttonValue)
     {
         //int _Value = 0;
         //Text text = _ATMButton.GetComponentsInChildren<Text>();
         //string a = text.text;
         //_buttonValue = int.Parse(a);
-        DataManager._playerCash -= _buttonValue;
-        DataManager._atmBalance += _buttonValue;
+        if (DataManager._playerCash > 0 && DataManager._playerCash >= _buttonValue)
+        {
+            DataManager._playerCash -= _buttonValue;
+            DataManager._atmBalance += _buttonValue;
+        }
+        else
+        {
+            insufficientPopup.SetActive(true);
+            return;
+        }
+
     }
 
     public void Withdraw(int _buttonValue)
     {
-        DataManager._playerCash += _buttonValue;
-        DataManager._atmBalance -= _buttonValue;
+        if(DataManager._atmBalance > 0 && DataManager._atmBalance >= _buttonValue)
+        {
+            DataManager._playerCash += _buttonValue;
+            DataManager._atmBalance -= _buttonValue;
+        }
+        else
+        {
+            insufficientPopup.SetActive(true);
+            return;
+        }
     }
 
     public void CheckSceneName()
