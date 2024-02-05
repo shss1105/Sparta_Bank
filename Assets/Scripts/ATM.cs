@@ -27,6 +27,6 @@ public class ATM : MonoBehaviour
     void Update()
     {
         currentBalance = DataManager._atmBalance;
-        currentBalanceTxt.text = currentBalance.ToString();
+        currentBalanceTxt.text = currentBalance.ToString("N0");
     }
 }

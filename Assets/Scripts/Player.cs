@@ -23,6 +23,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         currentCash = DataManager._playerCash;
-        currentCashValueTxt.text = currentCash.ToString();
+        currentCashValueTxt.text = currentCash.ToString("N0");
     }
 }
