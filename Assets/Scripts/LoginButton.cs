@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LoginButton : MonoBehaviour
 {
+    [SerializeField] private InputField ID;
+    [SerializeField] private InputField Password;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +18,15 @@ public class LoginButton : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnclickLoginBtn()
+    {
+        if (ID.text == "" || Password.text == "")
+        {
+            return;
+        }
+        
+        SceneManager.LoadScene("StartScene");
     }
 }
