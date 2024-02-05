@@ -332,10 +332,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -432,6 +432,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210299368}
   m_CullTransparentMesh: 1
+--- !u!1 &210685880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 210685883}
+  - component: {fileID: 210685882}
+  - component: {fileID: 210685881}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &210685881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210685880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &210685882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210685880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &210685883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210685880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274505840
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,10 +716,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -751,7 +819,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 362687062}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 705364622}
+        m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
+        m_MethodName: OnClickBackStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &362687062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,10 +1010,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 35
     m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1073,7 +1153,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705364622}
         m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
-        m_MethodName: OnclickDeposit
+        m_MethodName: OnclickManWonBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1207,7 +1287,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705364622}
         m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
-        m_MethodName: OnclickDeposit
+        m_MethodName: OnclickOManWonBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1326,7 +1406,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 50,000
+  m_Text: 50000
 --- !u!222 &684077975
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1382,6 +1462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9ecbc0dc20739429fe7bc251a96103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InputField: {fileID: 54311689}
 --- !u!114 &705364623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,7 +1477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userName: {fileID: 880440202}
   currentBalanceTxt: {fileID: 408433325}
-  currentBalance: 50000
+  currentBalance: 0
 --- !u!1 &798406177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,7 +1564,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705364622}
         m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
-        m_MethodName: OnclickDeposit
+        m_MethodName: OnclickSamManWonBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1694,7 +1775,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 892713832}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 705364622}
+        m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
+        m_MethodName: OnclickDirectinputBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &892713832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1804,7 +1897,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30,000
+  m_Text: 30000
 --- !u!222 &894623383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1964,7 +2057,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10,000
+  m_Text: 10000
 --- !u!222 &1394296390
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2672,7 +2765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCashValueTxt: {fileID: 968443473}
-  currentCash: 100000
+  currentCash: 0
 --- !u!1 &2105323073
 GameObject:
   m_ObjectHideFlags: 0

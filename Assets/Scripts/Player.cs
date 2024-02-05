@@ -11,17 +11,18 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-
+        
     }
     void Start()
     {
-        currentCash = DataManager._playerCash;
-        currentCashValueTxt.text = currentCash.ToString();
+        //currentCash = DataManager._playerCash;
+        //currentCashValueTxt.text = currentCash.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        currentCash = DataManager._playerCash;
+        currentCashValueTxt.text = currentCash.ToString();
     }
 }

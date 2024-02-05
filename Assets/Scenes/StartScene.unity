@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9ecbc0dc20739429fe7bc251a96103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ATM: {fileID: 469405329}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,8 +946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c40272ef762b84395732b5b9e70177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCash: {fileID: 1497719772}
-  atmBalance: {fileID: 1254346887}
 --- !u!4 &1013337556
 Transform:
   m_ObjectHideFlags: 0

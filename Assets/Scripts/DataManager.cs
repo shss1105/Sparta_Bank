@@ -7,12 +7,12 @@ public class DataManager : MonoBehaviour
 {
     private static DataManager instance;
 
-    Player _player;
-    public Text playerCash;
-    public Text atmBalance;
+    //Player _player;
+    //public Text playerCash;
+    //public Text atmBalance;
 
 
-    public static int _playerCash = 0;
+    public static int _playerCash = 100000;
     public static int _atmBalance = 50000;
 
     private void Awake()
@@ -26,11 +26,12 @@ public class DataManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
     // Start is called before the first frame update
     void Start()
     {
-        playerCash.text = PlayerPrefs.GetInt("playerCash").ToString();
+        //PlayerPrefs.DeleteAll();
         LoadCash();
         LoadBalance();
     }
@@ -51,7 +52,7 @@ public class DataManager : MonoBehaviour
         {
             _playerCash = 100000;
             SaveCash();
-            _playerCash = PlayerPrefs.GetInt("possessionGold");
+            _playerCash = PlayerPrefs.GetInt("playerCash");
         }
     }
 
@@ -74,7 +75,9 @@ public class DataManager : MonoBehaviour
         }
         else
         {
-            //SaveBalance();
+            _atmBalance = 50000;
+            SaveBalance();
+            _atmBalance = PlayerPrefs.GetInt("atmBalance");
         }
     }
 
