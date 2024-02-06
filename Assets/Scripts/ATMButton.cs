@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,7 @@ public class ATMButton : MonoBehaviour
     [SerializeField] private InputField RemittanceTargetInputField;
     [SerializeField] private InputField RemittanceValueInputField;
     [SerializeField] private GameObject insufficientPopup;
+    [SerializeField] private Text errorMessage;
     //public GameObject ATM;
     // Start is called before the first frame update
     void Start()
@@ -72,6 +74,36 @@ public class ATMButton : MonoBehaviour
         UseInputATM(DepositAndWithdrawInputField.text);
     }
 
+    public void OnClickRemittanceBtn()
+    {
+        if (RemittanceTargetInputField.text == "" || RemittanceValueInputField.text == "")
+        {
+            insufficientPopup.SetActive(true);
+            errorMessage.text = "입력 정보를 확인해 주세요.";
+            return;
+        }
+        else
+        {
+            if (DataManager._atmBalance <= 0)
+            {
+                insufficientPopup.SetActive(true);
+                errorMessage.text = "잔액이 부족합니다.";
+                return;
+            }
+            else
+            {
+                if(PlayerPrefs.HasKey("playerID"+0) != true)
+                {
+                    insufficientPopup.SetActive(true);
+                    errorMessage.text = "대상이 없습니다.";
+                    return;
+                }
+            }
+            Remittance(RemittanceValueInputField.text);
+        }
+
+    }
+
     public void OnClickClosePopup()
     {
         insufficientPopup.SetActive(false);
@@ -124,9 +156,30 @@ public class ATMButton : MonoBehaviour
         }
     }
 
-    public void Remittance()
+    public void Remittance(string inputValue)
     {
-        // 송금기능
+        if(PlayerPrefs.HasKey("playerCount") == true)
+        {
+            DataManager.playerIDCount = PlayerPrefs.GetInt("playerCount");
+            int temp = DataManager.playerIDCount;
+            int sentBalance = PlayerPrefs.GetInt("atmBalance" + (temp-1));
+            int targetBalance = PlayerPrefs.GetInt("atmBalance" + (temp - 2));
+            int Value = int.Parse(inputValue);
+
+            string sent = PlayerPrefs.GetString("playerName" + (temp-1));
+            string target = PlayerPrefs.GetString("playerName" + (temp - 2));
+
+            if(DataManager._atmBalance > 0 && RemittanceTargetInputField.text == target)
+            {
+                DataManager._atmBalance -= Value;
+                targetBalance += Value;
+
+                PlayerPrefs.SetInt("atmBalance" + (temp - 1), DataManager._atmBalance);
+                PlayerPrefs.SetInt("atmBalance" + (temp - 2), targetBalance);
+                PlayerPrefs.Save();
+
+            }
+        }
     }
 
     public void CheckSceneName()
