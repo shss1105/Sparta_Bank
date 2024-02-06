@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 475508252}
   - component: {fileID: 475508251}
   m_Layer: 0
-  m_Name: Button (Legacy)
+  m_Name: RemittanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1566,7 +1566,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9ecbc0dc20739429fe7bc251a96103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputField: {fileID: 1766094899}
+  DepositAndWithdrawInputField: {fileID: 0}
+  RemittanceTargetInputField: {fileID: 1267609465}
+  RemittanceValueInputField: {fileID: 1766094899}
   insufficientPopup: {fileID: 598941021}
 --- !u!114 &1337527042
 MonoBehaviour:

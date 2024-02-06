@@ -10,7 +10,10 @@ public class ATMButton : MonoBehaviour
     private bool isdepositScene;
     //private Button _ATMButton;
     private int _buttonValue;
-    [SerializeField] private InputField InputField;
+    
+    [SerializeField] private InputField DepositAndWithdrawInputField;
+    [SerializeField] private InputField RemittanceTargetInputField;
+    [SerializeField] private InputField RemittanceValueInputField;
     [SerializeField] private GameObject insufficientPopup;
     //public GameObject ATM;
     // Start is called before the first frame update
@@ -42,7 +45,7 @@ public class ATMButton : MonoBehaviour
 
     public void OnClickRemittance()
     {
-        // ¼Û±Ý¾À
+        SceneManager.LoadScene("RemittanceScene");
     }
 
     public void OnClickManWonBtn()
@@ -66,7 +69,7 @@ public class ATMButton : MonoBehaviour
     public void OnClickDirectinputBtn()
     {
         CheckSceneName();
-        UseInputATM(InputField.text);
+        UseInputATM(DepositAndWithdrawInputField.text);
     }
 
     public void OnClickClosePopup()
@@ -84,6 +87,13 @@ public class ATMButton : MonoBehaviour
         {
             DataManager._playerCash -= _buttonValue;
             DataManager._atmBalance += _buttonValue;
+
+            if (PlayerPrefs.HasKey("playerCount") == true)
+            {
+                DataManager.playerIDCount = PlayerPrefs.GetInt("playerCount");
+                PlayerPrefs.SetInt("playerCash"+ (DataManager.playerIDCount - 1), DataManager._playerCash);
+                PlayerPrefs.SetInt("atmBalance"+ (DataManager.playerIDCount - 1), DataManager._atmBalance);
+            }
         }
         else
         {
@@ -99,6 +109,13 @@ public class ATMButton : MonoBehaviour
         {
             DataManager._playerCash += _buttonValue;
             DataManager._atmBalance -= _buttonValue;
+
+            if (PlayerPrefs.HasKey("playerCount") == true)
+            {
+                DataManager.playerIDCount = PlayerPrefs.GetInt("playerCount");
+                PlayerPrefs.SetInt("playerCash" + (DataManager.playerIDCount - 1), DataManager._playerCash);
+                PlayerPrefs.SetInt("atmBalance" + (DataManager.playerIDCount - 1), DataManager._atmBalance);
+            }
         }
         else
         {
@@ -143,14 +160,14 @@ public class ATMButton : MonoBehaviour
     {
         if (isdepositScene)
         {
-            inputValue = InputField.text;
+            inputValue = DepositAndWithdrawInputField.text;
             int Value = int.Parse(inputValue);
             _buttonValue = Value;
             Deposit(_buttonValue);
         }
         else
         {
-            inputValue = InputField.text;
+            inputValue = DepositAndWithdrawInputField.text;
             int Value = int.Parse(inputValue);
             _buttonValue = Value;
             Withdraw(_buttonValue);

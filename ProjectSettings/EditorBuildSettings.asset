@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WithdrawScene.unity
     guid: 495898f1542218c439d7aaf70c0bebf5
+  - enabled: 1
+    path: Assets/Scenes/RemittanceScene.unity
+    guid: 84d1ad3c96f67db469551cca248b04b0
   m_configObjects: {}

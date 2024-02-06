@@ -44,8 +44,8 @@ public class DataManager : MonoBehaviour
     {
         //playerData = new Dictionary<string, string>();
         //PlayerPrefs.DeleteAll();
-        LoadCash();
-        LoadBalance();
+        //LoadCash();
+        //LoadBalance();
         LoadPlayerInfo();
     }
 
@@ -78,6 +78,26 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.SetString("playerID" + playerIDCount, _playerID);
         PlayerPrefs.SetString("playerName" + playerIDCount, _playerName);
         PlayerPrefs.SetString("playerPassword" + playerIDCount, _playerPassword);
+        
+        if (PlayerPrefs.HasKey("playerCash") == true)
+        {
+            _playerCash = PlayerPrefs.GetInt("playerCash" + playerIDCount);
+        }
+        else
+        {
+            _playerCash = 100000;
+            PlayerPrefs.SetInt("playerCash" + playerIDCount, _playerCash);
+        }
+
+        if (PlayerPrefs.HasKey("atmBalance") == true)
+        {
+            _atmBalance = PlayerPrefs.GetInt("atmBalance" + playerIDCount);
+        }
+        else
+        {
+            _atmBalance = 50000;
+            PlayerPrefs.SetInt("atmBalance" + playerIDCount, _atmBalance);
+        }
         playerIDCount++;
         PlayerPrefs.SetInt("playerCount", playerIDCount);
         PlayerPrefs.Save();
@@ -97,6 +117,8 @@ public class DataManager : MonoBehaviour
                     _playerID = PlayerPrefs.GetString("playerID" + (playerIDCount - 1));
                     _playerName = PlayerPrefs.GetString("playerName" + (playerIDCount - 1));
                     _playerPassword = PlayerPrefs.GetString("playerPassword" + (playerIDCount - 1));
+                    _playerCash = PlayerPrefs.GetInt("playerCash" + (playerIDCount - 1));
+                    _atmBalance = PlayerPrefs.GetInt("atmBalance" + (playerIDCount - 1));
                 }
             }
 
@@ -105,7 +127,7 @@ public class DataManager : MonoBehaviour
 
     public void SaveCash()
     {
-        PlayerPrefs.SetInt("playerCash", _playerCash);
+        //PlayerPrefs.SetInt("playerCash", _playerCash);
         PlayerPrefs.Save();
     }
 
@@ -118,7 +140,7 @@ public class DataManager : MonoBehaviour
         else
         {
             _playerCash = 100000;
-            SaveCash();
+            //SaveCash();
             _playerCash = PlayerPrefs.GetInt("playerCash");
         }
     }
@@ -143,7 +165,7 @@ public class DataManager : MonoBehaviour
         else
         {
             _atmBalance = 50000;
-            SaveBalance();
+            //SaveBalance();
             _atmBalance = PlayerPrefs.GetInt("atmBalance");
         }
     }
