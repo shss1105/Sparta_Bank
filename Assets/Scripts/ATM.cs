@@ -21,12 +21,15 @@ public class ATM : MonoBehaviour
 
         //currentBalance = DataManager._atmBalance;
         //currentBalanceTxt.text = currentBalance.ToString();
+        DataManager.instance.LoadPlayerInfo();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //DataManager.instance.LoadPlayerInfo();
         currentBalance = DataManager._atmBalance;
         currentBalanceTxt.text = currentBalance.ToString("N0");
+        userName.text = DataManager._playerName;
     }
 }

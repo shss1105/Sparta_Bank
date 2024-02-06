@@ -344,7 +344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9ecbc0dc20739429fe7bc251a96103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ATM: {fileID: 469405329}
+  InputField: {fileID: 0}
+  insufficientPopup: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +604,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 469405332}
         m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
-        m_MethodName: OnclickDeposit
+        m_MethodName: OnClickDeposit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1285,7 +1286,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 469405332}
         m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
-        m_MethodName: ONclickWithdraw
+        m_MethodName: OnClickWithdraw
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1745,7 +1746,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uAE40\uC2B9\uD604"
+  m_Text: none
 --- !u!222 &2061986284
 CanvasRenderer:
   m_ObjectHideFlags: 0

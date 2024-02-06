@@ -25,12 +25,12 @@ public class ATMButton : MonoBehaviour
         
     }
 
-    public void OnclickDeposit()
+    public void OnClickDeposit()
     {
         SceneManager.LoadScene("DepositScene");
     }
 
-    public void ONclickWithdraw()
+    public void OnClickWithdraw()
     {
         SceneManager.LoadScene("WithdrawScene");
     }
@@ -40,31 +40,31 @@ public class ATMButton : MonoBehaviour
         SceneManager.LoadScene("StartScene");
     }
 
-    public void OnclickManWonBtn()
+    public void OnClickManWonBtn()
     {
         CheckSceneName();
         UseATM(10000);
     }
 
-    public void OnclickSamManWonBtn()
+    public void OnClickSamManWonBtn()
     {
         CheckSceneName();
         UseATM(30000);
     }
 
-    public void OnclickOManWonBtn()
+    public void OnClickOManWonBtn()
     {
         CheckSceneName();
         UseATM(50000);
     }
 
-    public void OnclickDirectinputBtn()
+    public void OnClickDirectinputBtn()
     {
         CheckSceneName();
         UseInputATM(InputField.text);
     }
 
-    public void OnclickClosePopup()
+    public void OnClickClosePopup()
     {
         insufficientPopup.SetActive(false);
     }

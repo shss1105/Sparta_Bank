@@ -423,7 +423,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uAE40\uC2B9\uD604"
+  m_Text: none
 --- !u!222 &121216577
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -662,7 +662,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 291653929}
         m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
-        m_MethodName: OnclickManWonBtn
+        m_MethodName: OnClickManWonBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -965,7 +965,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 291653929}
         m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
-        m_MethodName: OnclickOManWonBtn
+        m_MethodName: OnClickOManWonBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1419,7 +1419,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 291653929}
         m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
-        m_MethodName: OnclickDirectinputBtn
+        m_MethodName: OnClickDirectinputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1871,7 +1871,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 291653929}
         m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
-        m_MethodName: OnclickSamManWonBtn
+        m_MethodName: OnClickSamManWonBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2161,7 +2161,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 291653929}
         m_TargetAssemblyTypeName: ATMButton, Assembly-CSharp
-        m_MethodName: OnclickClosePopup
+        m_MethodName: OnClickClosePopup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
