@@ -40,6 +40,11 @@ public class ATMButton : MonoBehaviour
         SceneManager.LoadScene("StartScene");
     }
 
+    public void OnClickRemittance()
+    {
+        // 송금씬
+    }
+
     public void OnClickManWonBtn()
     {
         CheckSceneName();
@@ -100,6 +105,11 @@ public class ATMButton : MonoBehaviour
             insufficientPopup.SetActive(true);
             return;
         }
+    }
+
+    public void Remittance()
+    {
+        // 송금기능
     }
 
     public void CheckSceneName()
